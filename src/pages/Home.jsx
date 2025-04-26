@@ -3,6 +3,7 @@ import { MailOutlined, HomeOutlined, FacebookOutlined, TwitterOutlined, DownOutl
 import OrganizationSection from '../components/OrganizationSection';
 
 import logo from "../assets/logo.png";
+import MediaSection from '../components/MediaSection';
 
 // TopBar Component
 const TopBar = () => {
@@ -201,18 +202,18 @@ const MainContent = () => {
 
   const events = [
     {
-      image: "https://via.placeholder.com/300x150?text=Event1",
+      image: "https://iuh.edu.vn/Resource/Upload2/_thumbs/Image/2025/04/AVEVA-BANER.JPG",
       title: "AVEA trao tài trợ học phí trị giá 180.000 USD tại Đại học Công nghiệp... (25-04-2025)",
       a: "#",
       isNew: true,
     },
     {
-      image: "https://via.placeholder.com/300x150?text=Event2",
+      image: "https://iuh.edu.vn/Resource/Upload2/_thumbs/Image/2025/04/AVEVA-BANER.JPG",
       title: "Sôi nổi hoạt động Tuần lễ giao lưu văn hóa, khoa học sinh viên quốc tế... (24-03-2025)",
       a: "#",
     },
     {
-      image: "https://via.placeholder.com/300x150?text=Event3",
+      image: "https://iuh.edu.vn/Resource/Upload2/_thumbs/Image/2025/04/AVEVA-BANER.JPG",
       title: "Đại học Công nghiệp TP. HCM tham gia dự án GreenEdu Seeds của Erasmus (19-03-2025)",
       a: "#",
     },
@@ -377,16 +378,13 @@ const Footer = () => {
 // Home Component
 const Home = () => {
   return (
-    <div>
+    <div className='flex flex-col min-h-screen bg-gray-100'>
       <TopBar />
       <Header />
-      {/* <Banner /> */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
-        {/* <div className="col-span-1">
-          <Sidebar />
-        </div> */}
+      <div className="mx-auto grid grid-cols-1 gap-4 mt-4">
         <div className="col-span-3">
           <OrganizationSection />
+          <MediaSection />  
         </div>
       </div>
       <Footer />

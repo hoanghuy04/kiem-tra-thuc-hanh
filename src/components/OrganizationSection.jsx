@@ -1,5 +1,7 @@
 import { Card, Menu } from 'antd';
 import { CalendarOutlined, RightOutlined } from '@ant-design/icons';
+import anh2 from '../assets/anh2.jpg';
+import anh3 from '../assets/anh3.jpg';
 
 // Sidebar Component with Hover Submenu
 const Sidebar = () => {
@@ -71,7 +73,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="bg-white p-4 border rounded-lg shadow-md">
+    <div className="bg-white h-full p-4 border rounded-lg shadow-md">
       <div className="text-blue-900 font-bold text-lg mb-4">
         CƠ CẤU TỔ CHỨC
       </div>
@@ -115,18 +117,18 @@ const MainContent = () => {
 
   const events = [
     {
-      image: "https://via.placeholder.com/300x150?text=Event1",
+      image: "https://iuh.edu.vn/Resource/Upload2/_thumbs/Image/2025/04/AVEVA-BANER.JPG",
       title: "AVEA trao tài trợ học phí trị giá 180.000 USD tại Đại học Công nghiệp... (25-04-2025)",
       link: "#",
       isNew: true,
     },
     {
-      image: "https://via.placeholder.com/300x150?text=Event2",
+      image: "https://iuh.edu.vn/Resource/Upload2/_thumbs/Image/2025/04/AVEVA-BANER.JPG",
       title: "Sôi nổi hoạt động Tuần lễ giao lưu văn hóa, khoa học sinh viên quốc tế... (24-03-2025)",
       link: "#",
     },
     {
-      image: "https://via.placeholder.com/300x150?text=Event3",
+      image: "https://iuh.edu.vn/Resource/Upload2/_thumbs/Image/2025/04/AVEVA-BANER.JPG",
       title: "Đại học Công nghiệp TP. HCM tham gia dự án GreenEdu Seeds của Erasmus (19-03-2025)",
       link: "#",
     },
