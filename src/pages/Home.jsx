@@ -1,6 +1,9 @@
 import { Layout, Menu, Button, Space, Image, Card, List, Typography } from 'antd';
-import { MailOutlined, HomeOutlined, FacebookOutlined, TwitterOutlined, LinkedinOutlined, DownOutlined, CalendarOutlined } from '@ant-design/icons';
-import logo from '../assets/logo.png';
+import { MailOutlined, HomeOutlined, FacebookOutlined, TwitterOutlined, DownOutlined, CalendarOutlined } from '@ant-design/icons';
+import OrganizationSection from '../components/OrganizationSection';
+
+import logo from "../assets/logo.png";
+
 // TopBar Component
 const TopBar = () => {
   return (
@@ -21,7 +24,7 @@ const TopBar = () => {
   );
 };
 
-// Header Component (Reused with adjustments for logo and university name)
+// Header Component
 const Header = () => {
   const menuItems = [
     {
@@ -58,9 +61,8 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-gray-200 py-4 px-4 flex flex-col">
-      {/* Logo and University Name */}
-      <div className="flex items-center mb-4">
+    <header className=" bg-gray-200 py-4 px-4 flex flex-col">
+      <div className=" max-w-7xl flex items-center mb-4">
         <Image
           src={logo}
           alt="IUH Logo"
@@ -79,8 +81,6 @@ const Header = () => {
           </div>
         </div>
       </div>
-
-      {/* Navigation Menu */}
       <Menu
         theme="dark"
         mode="horizontal"
@@ -88,8 +88,6 @@ const Header = () => {
         items={menuItems}
         className="bg-blue-950"
       />
-
-      {/* Search Bar */}
       <div className="flex justify-end mt-2">
         <input
           type="text"
@@ -102,65 +100,97 @@ const Header = () => {
 };
 
 // Banner Component
-const Banner = () => {
+// const Banner = () => {
+//   return (
+//     <div
+//       className="relative bg-cover bg-center h-64 flex items-center justify-start px-8"
+//       style={{
+//         backgroundImage: "url('https://via.placeholder.com/1200x300?text=Cityscape')",
+//       }}
+//     >
+//       <div className="flex items-center">
+//         <div className="text-white">
+//           {/* <div className="text-blue-400 text-2xl font-bold">
+//             Tuyển sinh
+//           </div> */}
+//           <div className="text-3xl font-bold">
+//             MÙA ĐOAN THỨ TẾO
+//           </div>
+//           <div className="text-4xl font-bold">
+//             ĐẠI HỌC CÔNG NGHIỆP THÀNH PHỐ HỒ CHÍ MINH
+//           </div>
+//         </div>
+//         <div className="ml-8">
+//           <Image
+//             src="https://via.placeholder.com/100x100?text=QR"
+//             alt="QR Code"
+//             width={100}
+//             preview={false}
+//           />
+//           <div className="text-center text-white mt-2">
+//             <a
+//               href="https://iuh.edu.vn"
+//               className="text-red-600 font-bold underline"
+//             >
+//               HTTPS://IUH.EDU.VN
+//             </a>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// Sidebar Component
+const Sidebar = () => {
+  const as = [
+    "CƠ CẤU TỔ CHỨC",
+    "LÃNH BẠO",
+    "CÁC PHÒNG BAN",
+    "CÁC KHOA",
+    "CÁC VIỆN",
+    "CÁC TRUNG TÂM",
+    "CÁC PHÂN HIỆU",
+    "ĐOÀN THỂ",
+  ];
+
   return (
-    <div
-      className="relative bg-cover bg-center h-64 flex items-center justify-start px-8"
-      style={{
-        backgroundImage: "url('https://via.placeholder.com/1200x300?text=Cityscape')",
-      }}
-    >
-      <div className="flex items-center">
-        <div className="text-white">
-          <div className="text-blue-400 text-2xl font-bold">
-            Tuyển sinh
-          </div>
-          <div className="text-3xl font-bold">
-            MÙA ĐOAN THỨ TẾO
-          </div>
-          <div className="text-4xl font-bold">
-            ĐẠI HỌC CÔNG NGHIỆP THÀNH PHỐ HỒ CHÍ MINH
-          </div>
-        </div>
-        <div className="ml-8">
-          <Image
-            src="https://via.placeholder.com/100x100?text=QR"
-            alt="QR Code"
-            width={100}
-            preview={false}
-          />
-          <div className="text-center text-white mt-2">
-            <a
-              href="https://iuh.edu.vn"
-              className="text-red-600 font-bold underline"
-            >
-              HTTPS://IUH.EDU.VN
-            </a>
-          </div>
-        </div>
+    <div className="bg-white p-4">
+      <div className="text-blue-900 font-bold text-lg mb-2">
+        CƠ CẤU TỔ CHỨC
       </div>
+      <List
+        dataSource={as}
+        renderItem={(item) => (
+          <List.Item>
+            <a href={`/${item.toLowerCase().replace(/\s+/g, '-')}`} className="text-blue-900 hover:underline">
+              {item}
+            </a>
+          </List.Item>
+        )}
+      />
     </div>
   );
 };
 
-
-
-// Main Content Component
+// MainContent Component (Updated to match the image)
 const MainContent = () => {
   const announcements = [
     {
       title: "Thông báo kỳ nghỉ lễ Quốc khánh 2/9 dành cho sinh viên năm 2025 (24-04-2025)",
       a: "#",
+      isNew: true,
     },
     {
-      title: "Lịch thi học kỳ 2 năm học 2024-2025 của sinh viên chính quy đại học (22-04-2025)",
+      title: "Thông báo tuyển chọn chương sinh tốt nghiệp đại học chính quy đại học (21-04-2025)",
       a: "#",
+      isNew: true,
     },
   ];
 
   const admissions = [
     {
-      title: "Thông báo tuyển sinh đại học chính quy đợt 2 năm học 2025 (28-03-2025)",
+      title: "Thông báo tuyển sinh đại học chính quy đợt liên trình từ trình độ cao đẳng lên trình... (28-03-2025)",
       a: "#",
     },
     {
@@ -174,10 +204,11 @@ const MainContent = () => {
       image: "https://via.placeholder.com/300x150?text=Event1",
       title: "AVEA trao tài trợ học phí trị giá 180.000 USD tại Đại học Công nghiệp... (25-04-2025)",
       a: "#",
+      isNew: true,
     },
     {
       image: "https://via.placeholder.com/300x150?text=Event2",
-      title: "Sôi nổi hoạt động Đoàn Thanh niên, Hội Sinh viên quốc tế tại Đại học Công nghiệp... (23-04-2025)",
+      title: "Sôi nổi hoạt động Tuần lễ giao lưu văn hóa, khoa học sinh viên quốc tế... (24-03-2025)",
       a: "#",
     },
     {
@@ -196,9 +227,12 @@ const MainContent = () => {
           dataSource={announcements}
           renderItem={(item) => (
             <List.Item>
-              <a to={item.a} className="text-blue-900 hover:underline">
+              <a to={item.a} className="text-blue-900 hover:underline flex items-center">
                 <CalendarOutlined className="text-red-600 mr-2" />
-                {item.title}
+                <span>{item.title}</span>
+                {item.isNew && (
+                  <span className="ml-2 text-red-600 font-bold text-xs">[new]</span>
+                )}
               </a>
             </List.Item>
           )}
@@ -215,9 +249,9 @@ const MainContent = () => {
           dataSource={admissions}
           renderItem={(item) => (
             <List.Item>
-              <a to={item.a} className="text-blue-900 hover:underline">
+              <a to={item.a} className="text-blue-900 hover:underline flex items-center">
                 <CalendarOutlined className="text-red-600 mr-2" />
-                {item.title}
+                <span>{item.title}</span>
               </a>
             </List.Item>
           )}
@@ -229,7 +263,7 @@ const MainContent = () => {
 
       {/* Events */}
       <div>
-        <div className="text-blue-900 font-bold text-lg mb-2">HỌP TÁC QUỐC TẾ</div>
+        <div className="text-blue-900 font-bold text-lg mb-2">HỢP TÁC QUỐC TẾ</div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {events.map((event, index) => (
             <Card
@@ -239,9 +273,12 @@ const MainContent = () => {
             >
               <Card.Meta
                 title={
-                  <a to={event.a} className="text-blue-900 hover:underline">
+                  <a to={event.a} className="text-blue-900 hover:underline flex items-center">
                     <CalendarOutlined className="text-red-600 mr-2" />
-                    {event.title}
+                    <span>{event.title}</span>
+                    {event.isNew && (
+                      <span className="ml-2 text-red-600 font-bold text-xs">[new]</span>
+                    )}
                   </a>
                 }
               />
@@ -255,7 +292,7 @@ const MainContent = () => {
     </div>
   );
 };
-
+  
 // Footer Component (Reused from previous response)
 const Footer = () => {
     return (
@@ -326,7 +363,7 @@ const Footer = () => {
               Twitter
             </a>
             <a href="#" className="text-blue-700 hover:text-blue-900">
-              FaLinkedinIn
+              FaaedinIn
             </a>
           </div>
   
@@ -343,14 +380,14 @@ const Home = () => {
     <div>
       <TopBar />
       <Header />
-      <Banner />
+      {/* <Banner /> */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
         {/* <div className="col-span-1">
           <Sidebar />
         </div> */}
-        {/* <div className="col-span-3">
-          <MainContent />
-        </div> */}
+        <div className="col-span-3">
+          <OrganizationSection />
+        </div>
       </div>
       <Footer />
     </div>
