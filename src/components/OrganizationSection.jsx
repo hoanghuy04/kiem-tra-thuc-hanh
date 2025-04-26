@@ -132,6 +132,11 @@ const MainContent = () => {
       title: "Đại học Công nghiệp TP. HCM tham gia dự án GreenEdu Seeds của Erasmus (19-03-2025)",
       link: "#",
     },
+    {
+      image: "https://iuh.edu.vn/Resource/Upload2/_thumbs/Image/2025/04/AVEVA-BANER.JPG",
+      title: "Đại học Công nghiệp TP. HCM tham gia dự án GreenEdu Seeds của Erasmus (19-03-2025)",
+      link: "#",
+    },
   ];
 
   return (
